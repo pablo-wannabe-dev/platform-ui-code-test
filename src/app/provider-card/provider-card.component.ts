@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
-import { ProviderListService } from "../provider-list.service";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
   selector: "provider-card",
@@ -9,18 +8,21 @@ import { ProviderListService } from "../provider-list.service";
 export class ProviderCardComponent implements OnInit {
   @Input() provider: any;
   @Input() isSelected: boolean;
+  @Output() storeInSelected = new EventEmitter<string>();
+  @Output() removeFromSelected = new EventEmitter<string>();
+  @Output() setLocalStorage = new EventEmitter<string>();
 
-  constructor(private providerListService: ProviderListService) {}
+  constructor() {}
 
   ngOnInit() {}
 
   selectCard(id: string) {
-    this.providerListService.storeInSelected(id);
-    this.providerListService.setLocalStorage();
+    this.storeInSelected.emit(id);
+    this.setLocalStorage.emit();
   }
 
   removeCard(id: string) {
-    this.providerListService.removeFromSelected(id);
-    this.providerListService.setLocalStorage();
+    this.removeFromSelected.emit(id);
+    this.setLocalStorage.emit();
   }
 }

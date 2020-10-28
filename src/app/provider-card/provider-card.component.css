@@ -23,9 +23,9 @@
 .close {
     cursor: pointer;
     position: absolute;
-    top: 20%;
+    top: 25%;
     right: 0%;
-    margin: 5px 15px;
+    margin: 5px 20px;
     transform: translate(0%, -50%);
     font-size: 30px;
 }

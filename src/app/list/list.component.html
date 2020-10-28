@@ -6,6 +6,9 @@
       *ngFor="let provider of selectedProviders"
       [provider]="provider"
       [isSelected]="true"
+      (storeInSelected)="storeInSelected($event)"
+      (removeFromSelected)="removeFromSelected($event)"
+      (setLocalStorage)="setLocalStorage($event)"
     >
     </provider-card>
   </div>
@@ -18,6 +21,9 @@
       *ngFor="let provider of unselectedProviders"
       [provider]="provider"
       [isSelected]="false"
+      (storeInSelected)="storeInSelected($event)"
+      (removeFromSelected)="removeFromSelected($event)"
+      (setLocalStorage)="setLocalStorage($event)"
     >
     </provider-card>
   </div>
