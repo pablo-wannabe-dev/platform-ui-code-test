@@ -1,0 +1,33 @@
+.card {
+    border-style: solid;
+    border-color: rgb(25, 110, 190);
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 55%;
+    padding: 20px 20px;
+    position: relative;
+}
+
+.card div {
+    margin: 10px;
+}
+
+.selected {
+    background-color: rgb(206 236 255);
+}
+
+.unselected {
+    cursor: pointer;
+}
+
+.close {
+    cursor: pointer;
+    position: absolute;
+    top: 20%;
+    right: 0%;
+    margin: 5px 15px;
+    transform: translate(0%, -50%);
+    font-size: 30px;
+}
+
+.close:hover {color: rgb(25, 110, 190);}

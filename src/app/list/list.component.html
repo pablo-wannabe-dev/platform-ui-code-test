@@ -1,4 +1,24 @@
 <div class="list-container">
   <h2>Providers</h2>
-
+  <span>Select any provider to pin it to your saved list</span>
+  <div class="selectedProviders">
+    <provider-card
+      *ngFor="let provider of selectedProviders"
+      [provider]="provider"
+      [isSelected]="true"
+    >
+    </provider-card>
+  </div>
+  <hr
+    *ngIf="selectedProviders.length > 0 && unselectedProviders.length > 0"
+    style="width: 58%; margin: 0 auto"
+  />
+  <div class="unselectedProviders">
+    <provider-card
+      *ngFor="let provider of unselectedProviders"
+      [provider]="provider"
+      [isSelected]="false"
+    >
+    </provider-card>
+  </div>
 </div>

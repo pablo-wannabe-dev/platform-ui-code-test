@@ -1,0 +1,14 @@
+<div *ngIf="isSelected; else notSelected" class="card selected">
+  <span (click)="removeCard(provider.id)" class="close">&times;</span>
+  <div>Name: {{ provider.name }}</div>
+  <div>Phone #: {{ provider.phone }}</div>
+  <div>Address: {{ provider.address }}</div>
+</div>
+
+<ng-template #notSelected>
+  <div class="card unselected" (click)="selectCard(provider.id)">
+    <div>Name: {{ provider.name }}</div>
+    <div>Phone #: {{ provider.phone }}</div>
+    <div>Address: {{ provider.address }}</div>
+  </div>
+</ng-template>
